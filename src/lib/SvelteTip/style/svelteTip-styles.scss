@@ -1,0 +1,195 @@
+:global(h1) {
+	font-family: var(--st-font-one);
+	font-size: 2em;
+	margin: 0;
+	padding: 0;
+	letter-spacing: 1px;
+	text-rendering: optimizeLegibility;
+	@supports (-webkit-touch-callout: none) {
+		-webkit-text-stroke: 0.5px;
+	}
+}
+
+:global(h2) {
+	font-family: var(--st-font-one);
+	font-size: 1.8em;
+	margin: 0;
+	padding: 0;
+	letter-spacing: 1px;
+	text-rendering: optimizeLegibility;
+	@supports (-webkit-touch-callout: none) {
+		-webkit-text-stroke: 0.5px;
+	}
+}
+
+:global(h3) {
+	font-family: var(--st-font-one);
+	font-size: 1.6em;
+	margin: 0;
+	padding: 0;
+	letter-spacing: 1px;
+	text-rendering: optimizeLegibility;
+	@supports (-webkit-touch-callout: none) {
+		-webkit-text-stroke: 0.5px;
+	}
+}
+
+:global(h3) {
+	font-family: var(--st-font-one);
+	font-size: 1.4em;
+	margin: 0;
+	padding: 0;
+	letter-spacing: 1px;
+	text-rendering: optimizeLegibility;
+	@supports (-webkit-touch-callout: none) {
+		-webkit-text-stroke: 0.5px;
+	}
+}
+
+:global(h4) {
+	font-family: var(--st-font-one);
+	font-size: 1.2em;
+	margin: 0;
+	padding: 0;
+	letter-spacing: 1px;
+	text-rendering: optimizeLegibility;
+	@supports (-webkit-touch-callout: none) {
+		-webkit-text-stroke: 0.5px;
+	}
+}
+
+:global(h5) {
+	font-family: var(--st-font-one);
+	font-size: 1em;
+	margin: 0;
+	padding: 0;
+	letter-spacing: 1px;
+	text-rendering: optimizeLegibility;
+	@supports (-webkit-touch-callout: none) {
+		-webkit-text-stroke: 0.5px;
+	}
+}
+
+:global(button) {
+	font-family: var(--st-font-one);
+}
+
+:global(textarea) {
+	color: inherit;
+	border: inherit;
+	text-rendering: optimizeLegibility;
+}
+
+:global(body) {
+	font-family: var(--st-font-two);
+	text-rendering: optimizeLegibility;
+}
+
+:global(p) {
+	font-family: var(--st-font-two);
+	text-rendering: optimizeLegibility;
+}
+
+:global(span) {
+	font-family: inherit;
+	text-rendering: optimizeLegibility;
+}
+
+:global(a) {
+	font-family: var(--st-font-two);
+	text-decoration: none;
+	color: inherit;
+	text-rendering: optimizeLegibility;
+
+	&:visited {
+		color: inherit;
+	}
+}
+
+:global(li) {
+	color: inherit;
+}
+
+:global(input) {
+	font-size: 12px;
+	font-family: var(--st-font-two);
+	color: inherit;
+	border: inherit;
+	text-rendering: optimizeLegibility;
+	/*** iPhone and iOS Form Input Zoom Fixes ***/
+	/* Fix Input Zoom on devices older than iPhone 5: */
+	@media screen and (device-aspect-ratio: 2/3) {
+		select,
+		textarea,
+		input[type='text'],
+		input[type='password'],
+		input[type='datetime'],
+		input[type='datetime-local'],
+		input[type='date'],
+		input[type='month'],
+		input[type='time'],
+		input[type='week'],
+		input[type='number'],
+		input[type='email'],
+		input[type='url'] {
+			font-size: 16px;
+		}
+	}
+
+	/* Fix Input Zoom on iPhone 5, 5C, 5S, iPod Touch 5g */
+	@media screen and (device-aspect-ratio: 40/71) {
+		select,
+		textarea,
+		input[type='text'],
+		input[type='password'],
+		input[type='datetime'],
+		input[type='datetime-local'],
+		input[type='date'],
+		input[type='month'],
+		input[type='time'],
+		input[type='week'],
+		input[type='number'],
+		input[type='email'],
+		input[type='url'] {
+			font-size: 16px;
+		}
+	}
+
+	/* Fix Input Zoom on iPhone 6, iPhone 6s, iPhone 7  */
+	@media screen and (device-aspect-ratio: 375/667) {
+		select,
+		textarea,
+		input[type='text'],
+		input[type='password'],
+		input[type='datetime'],
+		input[type='datetime-local'],
+		input[type='date'],
+		input[type='month'],
+		input[type='time'],
+		input[type='week'],
+		input[type='number'],
+		input[type='email'],
+		input[type='url'] {
+			font-size: 16px;
+		}
+	}
+
+	/* Fix Input Zoom on iPhone 6 Plus, iPhone 6s Plus, iPhone 7 Plus, iPhone 8, iPhone X, XS, XS Max  */
+	@media screen and (device-aspect-ratio: 9/16) {
+		select,
+		textarea,
+		input[type='text'],
+		input[type='password'],
+		input[type='datetime'],
+		input[type='datetime-local'],
+		input[type='date'],
+		input[type='month'],
+		input[type='time'],
+		input[type='week'],
+		input[type='number'],
+		input[type='email'],
+		input[type='url'] {
+			font-size: 16px;
+		}
+	}
+}

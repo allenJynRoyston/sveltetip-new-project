@@ -16,14 +16,6 @@
 </SvelteTipApp>
 
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Sen:wght@400;600;700&family=Roboto:wght@400;600;700&display=swap');
-
-  :root {
-    --st-font-one: 'Sen', 'Segoe UI Light', 'Segoe', Tahoma, Helvetica, Arial, sans-serif;
-    --st-font-two: 'Roboto', 'Segoe UI Light', 'Segoe', Tahoma, Helvetica, Arial, sans-serif;
-  }
-
-
 	main {
 		flex: 1;
 		display: flex;

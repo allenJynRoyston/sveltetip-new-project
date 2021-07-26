@@ -33,4 +33,10 @@ npm run build
 
 ## Production
 
-A guide for production builds can be found [here](https://www.sveltetip.com/home/production).
+```bash
+npm run build
+
+npm run start
+```
+
+A full guide for production builds can be found [here](https://www.sveltetip.com/home/production).

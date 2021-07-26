@@ -1,6 +1,6 @@
 # SvelteKit + SvelteTip Demo App
 
-This is a boilerplate app for SvelteKit with SvelteTip installed. For more detailed instructions, please visit (https://www.sveltetip.com/home/install)[here].
+This is a boilerplate app for SvelteKit with SvelteTip installed. For more detailed instructions, please click [here](https://www.sveltetip.com/home/install).
 
 ## Install
 

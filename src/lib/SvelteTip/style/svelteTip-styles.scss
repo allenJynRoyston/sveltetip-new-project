@@ -5,6 +5,11 @@
 		sans-serif;
 	--st-font-two: 'Roboto', 'Segoe UI Light', 'Segoe', Tahoma, Helvetica, Arial,
 		sans-serif;
+
+	--st-tiny-font: 9px;
+	--st-small-font: 11px;
+	--st-medium-font: 12px;
+	--st-large-font: 16px;
 }
 
 :global(h1) {
@@ -12,99 +17,68 @@
 	font-size: 2em;
 	margin: 0;
 	padding: 0;
-	letter-spacing: 1px;
 	text-rendering: optimizeLegibility;
-	@supports (-webkit-touch-callout: none) {
-		-webkit-text-stroke: 0.5px;
-	}
 }
 
-:global(h2) {
+:global(#svelte-tip-app h2) {
 	font-family: var(--st-font-one);
 	font-size: 1.8em;
 	margin: 0;
 	padding: 0;
-	letter-spacing: 1px;
 	text-rendering: optimizeLegibility;
-	@supports (-webkit-touch-callout: none) {
-		-webkit-text-stroke: 0.5px;
-	}
 }
 
-:global(h3) {
+:global(#svelte-tip-app h3) {
 	font-family: var(--st-font-one);
 	font-size: 1.6em;
 	margin: 0;
 	padding: 0;
-	letter-spacing: 1px;
 	text-rendering: optimizeLegibility;
-	@supports (-webkit-touch-callout: none) {
-		-webkit-text-stroke: 0.5px;
-	}
 }
 
-:global(h3) {
-	font-family: var(--st-font-one);
-	font-size: 1.4em;
-	margin: 0;
-	padding: 0;
-	letter-spacing: 1px;
-	text-rendering: optimizeLegibility;
-	@supports (-webkit-touch-callout: none) {
-		-webkit-text-stroke: 0.5px;
-	}
-}
-
-:global(h4) {
+:global(#svelte-tip-app h4) {
 	font-family: var(--st-font-one);
 	font-size: 1.2em;
 	margin: 0;
 	padding: 0;
-	letter-spacing: 1px;
 	text-rendering: optimizeLegibility;
-	@supports (-webkit-touch-callout: none) {
-		-webkit-text-stroke: 0.5px;
-	}
 }
 
-:global(h5) {
+:global(#svelte-tip-app h5) {
 	font-family: var(--st-font-one);
 	font-size: 1em;
 	margin: 0;
 	padding: 0;
-	letter-spacing: 1px;
 	text-rendering: optimizeLegibility;
-	@supports (-webkit-touch-callout: none) {
-		-webkit-text-stroke: 0.5px;
-	}
+	color: var(--heading-color);
 }
 
-:global(button) {
+:global(#svelte-tip-app button) {
 	font-family: var(--st-font-one);
 }
 
-:global(textarea) {
+:global(#svelte-tip-app textarea) {
 	color: inherit;
 	border: inherit;
 	text-rendering: optimizeLegibility;
 }
 
-:global(body) {
+:global(#svelte-tip-app body) {
 	font-family: var(--st-font-two);
 	text-rendering: optimizeLegibility;
 }
 
-:global(p) {
+:global(#svelte-tip-app p) {
 	font-family: var(--st-font-two);
 	text-rendering: optimizeLegibility;
 }
 
-:global(span) {
+:global(#svelte-tip-app span) {
 	font-family: inherit;
 	text-rendering: optimizeLegibility;
 }
 
-:global(a) {
+:global(#svelte-tip-app a) {
 	font-family: var(--st-font-two);
 	text-decoration: none;
 	color: inherit;
@@ -115,12 +89,12 @@
 	}
 }
 
-:global(li) {
+:global(#svelte-tip-app li) {
 	color: inherit;
 }
 
-:global(input) {
-	font-size: 12px;
+:global(#svelte-tip-app input) {
+	font-size: var(--st-medium-font);
 	font-family: var(--st-font-two);
 	color: inherit;
 	border: inherit;
@@ -141,7 +115,7 @@
 		input[type='number'],
 		input[type='email'],
 		input[type='url'] {
-			font-size: 16px;
+			font-size: var(--st-large-font);
 		}
 	}
 
@@ -160,7 +134,7 @@
 		input[type='number'],
 		input[type='email'],
 		input[type='url'] {
-			font-size: 16px;
+			font-size: var(--st-large-font);
 		}
 	}
 
@@ -179,7 +153,7 @@
 		input[type='number'],
 		input[type='email'],
 		input[type='url'] {
-			font-size: 16px;
+			font-size: var(--st-large-font);
 		}
 	}
 
@@ -198,7 +172,7 @@
 		input[type='number'],
 		input[type='email'],
 		input[type='url'] {
-			font-size: 16px;
+			font-size: var(--st-large-font);
 		}
 	}
 }

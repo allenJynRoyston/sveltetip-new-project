@@ -12,7 +12,6 @@
 	import HashWatch from '@system/HashWatch.svelte';
 	import SnackBar from '@system/Snackbar.svelte';
 	import Modal from '@system/Modal.svelte';
-
 	import ProgressBar from '@layout/ProgressBar.svelte';
 
 	// //--------------------------- STORES

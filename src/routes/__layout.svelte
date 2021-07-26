@@ -1,6 +1,7 @@
 <script lang="ts">
-  import SvelteTipApp from '@system/SvelteTipApp.svelte'
 	import Header from '$lib/header/Header.svelte';
+  import SvelteTipApp from '@system/SvelteTipApp.svelte';
+	import '../app.css';
 </script>
 
 <SvelteTipApp>

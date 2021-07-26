@@ -5,7 +5,6 @@
 	import Button from '@button/Button.svelte';
 
 	export let title = 'Hero Banner Title';
-	export let version = null;
 	export let buttonOne = null;
 	export let buttonTwo = null;
 
@@ -17,7 +16,7 @@
 </script>
 
 <div class={`hero-banner ${theme}-theme`} class:desktop={$isDesktop}>
-	<h5
+	<h1
 		class="title"
 		class:desktop={$isDesktop}
 		class:pointer={!!onTitleClick}
@@ -26,13 +25,21 @@
 		}}
 	>
 		{title}
-	</h5>
+	</h1>
 	<div class="buttons">
 		{#if buttonOne}
-			<Button style={'min-width: 100px'} size={$isTabletAndBelow ? 'tiny' : null} {...buttonOne} />
+			<Button
+				style={'min-width: 100px'}
+				size={$isTabletAndBelow ? 'tiny' : 'medium'}
+				{...buttonOne}
+			/>
 		{/if}
 		{#if buttonTwo}
-			<Button style={'min-width: 100px'} size={$isTabletAndBelow ? 'tiny' : null} {...buttonTwo} />
+			<Button
+				style={'min-width: 100px'}
+				size={$isTabletAndBelow ? 'tiny' : 'medium'}
+				{...buttonTwo}
+			/>
 		{/if}
 	</div>
 </div>
@@ -67,7 +74,7 @@
 				cursor: pointer;
 			}
 			&.desktop {
-				font-size: 72px;
+				font-size: 72px!important;
 			}
 			// &.lowHeight {
 			// 	font-size: 32px !important;

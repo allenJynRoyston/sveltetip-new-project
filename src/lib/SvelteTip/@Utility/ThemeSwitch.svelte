@@ -13,6 +13,7 @@
 <div class="themeswitcher" class:dark-theme={theme === 'dark'}>
 	<Pill
 		tiny
+		exactfit
 		inactiveTheme="light"
 		activeTheme="white"
 		disabled={theme === 'light'}
@@ -25,6 +26,7 @@
 
 	<Pill
 		tiny
+		exactfit
 		inactiveTheme="dark"
 		activeTheme="black"
 		disabled={theme === 'dark'}
@@ -38,6 +40,7 @@
 
 <style lang="scss">
 	.themeswitcher {
+		width: 100%;
 		display: flex;
 		justify-content: center;
 		align-items: center;

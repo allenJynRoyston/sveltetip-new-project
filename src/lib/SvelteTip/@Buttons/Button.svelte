@@ -209,7 +209,7 @@
 				background: none !important;
 				color: var(--black-1);
 				&:active {
-					color: var(--white-4);
+					color: var(--white-4)!important;
 					border: 3px solid var(--white-4);
 				}
 			}
@@ -225,7 +225,7 @@
 				color: var(--white-3-text);
 
 				&.hollow {
-					color: var(--white-1);
+					color: var(--white-1)!important;
 				}
 
 				&:active {
@@ -247,7 +247,7 @@
 			&.hollow {
 				border: 3px solid var(--black-0);
 				background: none !important;
-				color: var(--black-1);
+				color: var(--black-1)!important;
 				&:active {
 					color: var(--black-4);
 					border: 3px solid var(--black-4);

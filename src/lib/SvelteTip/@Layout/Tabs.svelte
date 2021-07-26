@@ -3,25 +3,23 @@
 	import { page } from '$app/stores';
 	import { browser } from '$app/env';
 
-  import SVG from '@base/SVG.svelte'
+	import SVG from '@text/SVG.svelte';
 	import Button from '@button/Button.svelte';
 
 	export let queryId = 'id';
 	export let defaultTab = null;
-  export let closable = false;
+	export let closable = false;
 	export let tabs = [];
 	export let applyTheme = 'black';
-	export let onClick = null;  
-  export let onClose = null;
+	export let onClick = null;
+	export let onClose = null;
 
 	const theme: string = getContext('theme');
-  const colors: any = getContext('colors');
+	const colors: any = getContext('colors');
 
 	$: svgFill = (_theme) => {
-    return browser        
-        ? colors[_theme][0].textFriendlyColor         
-        : 'black';
-  }
+		return browser ? colors[_theme][0].textFriendlyColor : 'black';
+	};
 
 	$: isActive = (id) => {
 		const query = $page?.query.get(queryId);
@@ -36,7 +34,7 @@
 				nomargin
 				exactfit
 				rel="external"
-				applyTheme={isActive(tab.id) ? applyTheme : (theme === 'dark' ? 'black' : 'white')}				
+				applyTheme={isActive(tab.id) ? applyTheme : theme === 'dark' ? 'black' : 'white'}
 				href={`?${queryId}=${tab.id}`}
 				onClick={() => {
 					onClick && onClick({ tab, index });
@@ -45,18 +43,22 @@
 				{tab.title}
 			</Button>
 
-      {#if closable}
-        <Button
-          nomargin
-          exactfit
-          applyTheme={isActive(tab.id) ? applyTheme : (theme === 'dark' ? 'black' : 'white')}				
-          onClick={() => {
-            onClose && onClose({tab, index})
-          }}
-        >
-          <SVG icon='cross' size={10} fill={svgFill(isActive(tab.id) ? applyTheme : (theme === 'dark' ? 'black' : 'white'))} />
-        </Button>
-      {/if}
+			{#if closable}
+				<Button
+					nomargin
+					exactfit
+					applyTheme={isActive(tab.id) ? applyTheme : theme === 'dark' ? 'black' : 'white'}
+					onClick={() => {
+						onClose && onClose({ tab, index });
+					}}
+				>
+					<SVG
+						icon="cross"
+						size={10}
+						fill={svgFill(isActive(tab.id) ? applyTheme : theme === 'dark' ? 'black' : 'white')}
+					/>
+				</Button>
+			{/if}
 		{/each}
 	</div>
 

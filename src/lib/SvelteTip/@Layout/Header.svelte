@@ -28,9 +28,12 @@
 	export let hideLogo = false;
 	export let hideNav = false;
 
-	export let invertColors = false;
+	export let invertTheme = false;
 	export let showBurgerMenuButton = false;
 	export let toggled = false;
+
+	export let notchOpenIcon = 'dots';
+	export let notchCloseIcon = 'cross';
 
 	const { openSidebar, openNotch, innerContainerAdditionalHeight, shrinkHeader } = SiteStore;
 	const { isTabletAndAbove, isDesktop } = DeviceStore;
@@ -38,6 +41,7 @@
 	const theme: string = getContext('theme');
 
 	let bottomHeight = null;
+	let navheight = null;
 
 	shrinkHeader.subscribe((val) => {
 		toggled = val;
@@ -56,6 +60,8 @@
 		);
 	};
 
+	$: useTheme = invertTheme ? (theme === 'dark' ? 'light' : 'dark') : theme;
+
 	$: bottomPos = toggled
 		? `margin-top: -${bottomHeight}px; opacity: 0; pointer-events: none; transition: ${'0.3'}s;`
 		: `margin-top: 0; opacity: 1; pointer-events: auto; transition: ${'0.3'}s`;
@@ -63,14 +69,14 @@
 	$: imageStyle = `background: url('${bgSrc}'); center center no-repeat; background-size: cover;`;
 </script>
 
-<nav class={`nav-header ${theme}-theme`} style={!!bgSrc ? imageStyle : null}>
-	<ThemeWrapper>
-		<section class="top-section">
+<nav class={`nav-header ${useTheme}-theme`} style={!!bgSrc ? imageStyle : null}>
+	<ThemeWrapper invert={invertTheme}>
+		<section class="top-section" bind:clientHeight={navheight}>
 			<ThreeSlot nopadding>
 				<section class="left-section" slot="left">
 					{#if showBurgerMenuButton}
 						<SVG
-							applyTheme={theme === 'dark' ? 'white' : 'black'}
+							applyTheme={useTheme === 'dark' ? 'white' : 'black'}
 							icon={$openSidebar ? 'circleup' : 'circledown'}
 							size={18}
 							onClick={() => {
@@ -86,10 +92,12 @@
 							{/if}
 
 							{#if !hideTitle && title && $isTabletAndAbove}
-								<div class={`brand ${theme}`} class:desktop={$isDesktop}>
+								<div class={`brand ${useTheme}`} class:desktop={$isDesktop}>
 									<slot>
 										<h1>{title}</h1>
-										<span>v{version}</span>
+										{#if !!version}
+											<span>v{version}</span>
+										{/if}
 									</slot>
 								</div>
 							{/if}
@@ -97,7 +105,7 @@
 					</Link>
 				</section>
 
-				<section class="center-section" slot="center">
+				<section class="center-section" slot="center" style={`height: ${navheight}px`}>
 					{#if !!centerEle}
 						<svelte:component this={centerEle.component} {...centerEle?.props} />
 					{/if}
@@ -110,8 +118,8 @@
 
 					{#if !!notchEle}
 						<SVG
-							applyTheme={theme === 'dark' ? 'white' : 'black'}
-							icon={$openNotch ? 'cross' : 'dots'}
+							applyTheme={useTheme === 'dark' ? 'white' : 'black'}
+							icon={$openNotch ? notchCloseIcon : notchOpenIcon}
 							onClick={() => {
 								$openNotch = !$openNotch;
 							}}
@@ -177,10 +185,10 @@
 		.brand {
 			display: flex;
 			font-size: 10px;
-			color: var(--black-0);
+			color: var(--black-2);
 
 			&.dark {
-				color: var(--white-0);
+				color: var(--white-2);
 			}
 
 			&.desktop {
@@ -202,6 +210,7 @@
 	}
 
 	.left-section {
+		z-index: 2;
 		display: flex;
 		align-items: center;
 		justify-content: flex-start;
@@ -209,12 +218,18 @@
 	}
 
 	.center-section {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 1;
+		width: 100%;
 		display: flex;
 		align-items: center;
-		justify-content: center;
+		justify-content: flex-end;
 	}
 
 	.right-section {
+		z-index: 2;
 		display: flex;
 		align-items: center;
 		justify-content: flex-start;

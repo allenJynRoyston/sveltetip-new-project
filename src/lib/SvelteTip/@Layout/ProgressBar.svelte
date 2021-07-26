@@ -44,41 +44,23 @@
 		}
 
 		.line {
-			&.primary {
-				background: var(--primary-0);
-			}
-			&.secondary {
-				background: var(--secondary-0);
-			}
-			&.magic {
-				background: var(--magic-0);
-			}
-			&.success {
-				background: var(--success-0);
-			}
-			&.danger {
-				background: var(--danger-0);
-			}
-			&.warning {
-				background: var(--warning-0);
-			}
-			&.black {
-				background: var(--black-0);
-			}
-			&.white {
-				background: var(--white-0);
-			}
-
-			&.rounded {
-				border-radius: 10px;
-			}
-
 			position: absolute;
 			left: 0;
 			z-index: 1;
 			width: 300px;
 			height: 10px;
 			animation: line-bounce 1500ms infinite;
+
+			$themes: 'primary', 'secondary', 'magic', 'success', 'warning', 'danger', 'black', 'white';
+			@each $theme in $themes {
+				&.#{$theme} {
+					background: var(--#{$theme}-0);
+				}
+			}
+
+			&.rounded {
+				border-radius: 10px;
+			}
 
 			&.fade {
 				animation: fade-out 1000ms infinite;
@@ -87,14 +69,6 @@
 
 		&.dark-theme {
 			background: var(--black-4);
-			.line {
-				&.primary {
-					background: var(--primary-0);
-				}
-				&.secondary {
-					background: var(--secondary-0);
-				}
-			}
 		}
 	}
 

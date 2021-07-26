@@ -1,20 +1,16 @@
-# create-svelte
+# SvelteKit + SvelteTip Demo App
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte);
+This is a boilerplate app for SvelteKit with SvelteTip installed. For more detailed instructions, please visit (https://www.sveltetip.com/home/install)[here].
 
-## Creating a project
+## Install
 
-If you're seeing this, you've probably already done this step. Congrats!
+Clone or download this app:
 
 ```bash
-# create a new project in the current directory
-npm init svelte@next
+git clone https://github.com/allenRoyston/sveltetip-new-project.git
 
-# create a new project in my-app
-npm init svelte@next my-app
+cd svelte sveltetip-new-project
 ```
-
-> Note: the `@next` is temporary
 
 ## Developing
 

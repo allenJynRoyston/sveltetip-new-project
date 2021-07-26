@@ -1,4 +1,5 @@
 import preprocess from 'svelte-preprocess';
+import adapter from '@sveltejs/adapter-static';
 import path from 'path';
 
 /** @type {import('@sveltejs/kit').Config} */
@@ -34,6 +35,10 @@ const config = {
 					'@st-js': path.resolve('./src/lib/SvelteTip/js'),
 				},
 			},
+		}),
+		adapter: adapter({
+			// default options are shown
+			out: 'build',
 		}),
 	},
 };

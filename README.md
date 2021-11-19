@@ -40,7 +40,7 @@ npm run build
 npm run preview
 ```
 
-Will bundle and server your app!  Enjoy the tiny compile size!
+... however, I've included a production build so now you can!  Enjoy the tiny compile size.  
 
 ## Production
 

@@ -21,6 +21,8 @@ npm run dev
 
 # or start the server and open the app in a new browser tab
 npm run dev -- --open
+
+# if it doesn't open automatically, navigate your browser to http://localhost:3000. 
 ```
 
 ## Building

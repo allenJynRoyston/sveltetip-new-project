@@ -49,5 +49,6 @@ npm run build
 
 npm run start
 ```
+if it doesn't open automatically, navigate your browser to http://localhost:3000. 
 
-A full guide for production builds can be found [here](https://www.sveltetip.com/home/production).
+> A full guide for production builds can be found [here](https://www.sveltetip.com/home/production).

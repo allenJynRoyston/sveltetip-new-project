@@ -35,6 +35,8 @@ You can preview the built app with `npm run preview`, regardless of whether you 
 ## Preview
 
 ```bash
+npm run build 
+
 npm run preview
 ```
 
